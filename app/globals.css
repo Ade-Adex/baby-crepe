@@ -1,26 +1,108 @@
 @import "tailwindcss";
 
+/* 🌞 Light mode (default) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F3ECE3;
+  --foreground: #ffffff;
+
+  --primary: #000;
+  --secondary: #fff;
+  --button-bg: #EE8923;
+
+
+  --font-sans: 'Inter', sans-serif;
+  --font-alt: 'Montserrat', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+
+  /* Optional breakpoints if you want them in CSS */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
 }
 
+/* 🧠 Custom Tailwind theme inline */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-button-bg: var(--button-bg);
+
+
+  --font-inter: var(--font-sans);
+  --font-montserrat: var(--font-alt);
+  --font-poppins: var(--font-alt);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.text-primary {
+  color: var(--primary) !important;
+}
+.bg-background {
+  background-color: var(--background) !important;
+}
+.border-primary {
+  border-color: var(--primary) !important;
+}
+
+
+/* 🔧 Global reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+/* 🌐 Base styles using the theme variables */
+  body {
+    background: var(--color-background);
+    color: var(--color-primary);
+    font-family: var(--font-inter), sans-serif;
   }
+
+
+
+.input {
+  @apply w-full px-4 py-3 text-sm bg-button-bg border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-gray-500;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+/* Autofill Background Fix for Inputs */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+/* Force autofill text color to inherit */
+input:-webkit-autofill {
+  -webkit-text-fill-color: inherit !important;
+  caret-color: inherit;
+}
+
+
+
+::-webkit-scrollbar {
+  width: 4px; /* Set the width for vertical scrollbar */
+  height: 4px; /* Set the height for horizontal scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2); /* Thumb color for light mode */
+  border-radius: 10px; /* Rounded thumb */
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.05); /* Track color for light mode */
 }

@@ -68,7 +68,7 @@ const MarketPage = () => {
   return (
     <div className="">
       {/* Search Bar */}
-      <div className="flex justify-between gap-20 mb-6 items-center">
+      <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-20 mb-6 items-center">
         <input
           type="text"
           placeholder="Search"
@@ -78,7 +78,7 @@ const MarketPage = () => {
         />
 
         {/* Category Tabs */}
-        <div className="w-full md:w-1/2 flex gap-2 flex-wrap">
+        <div className="w-full md:w-1/2 flex gap-2 md:flex-wrap">
           {categories.map((cat) => (
             <button
               key={cat}

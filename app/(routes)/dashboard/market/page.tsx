@@ -78,12 +78,12 @@ const MarketPage = () => {
         />
 
         {/* Category Tabs */}
-        <div className="w-full md:w-1/2 flex gap-2 md:flex-wrap">
+        <div className="w-full md:w-1/2 flex gap-2 md:flex-wrap overflow-auto">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-6 py-1 rounded-lg text-sm font-medium transition-all cursor-pointer ${
+              className={`px-6 py-1 rounded-lg text-xs md:text-sm font-medium transition-all cursor-pointer ${
                 activeCategory === cat
                   ? 'bg-orange-400 text-white'
                   : 'text-gray-700 hover:bg-button-bg/30 border border-gray-300'
@@ -113,7 +113,8 @@ const MarketPage = () => {
                 <div className="absolute top-3 left-0 ">
                   <ChanceGauge percentage={item.chance} />
                   <span className="text-xs font-semibold absolute top-4 left-3 flex flex-col items-center">
-                    {item.chance}% <span className="font-normal text-[10px]">Chance</span>
+                    {item.chance}%{' '}
+                    <span className="font-normal text-[10px]">Chance</span>
                   </span>
                 </div>
               </div>

@@ -128,32 +128,34 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
       {/* Top Navbar */}
       <header className="fixed top-0 left-0 z-40 w-full flex items-center justify-between bg-[#F3E4D4] md:bg-[#F3ECE3]">
         {/* Mobile menu icon */}
-        <div className="py-2 border-r border-gray-300 px-4 w-58">
-          <div className="flex bg-[#F3E4D4] items-center w-full gap-2 py-1 pl-3 ">
-            <div className="flex items-center md:hidden">
+        <div className="py-2 border-r border-gray-300 px-4 w-full md:w-58">
+          <div className="flex justify-between items-center w-full md:gap-2 py-1 pl-3 ">
+            <div className="flex items-center md:hidden order-2 md:order-1">
               <button className="cursor-pointer" onClick={toggle}>
                 {opened ? (
-                  <IoClose size={38} className="text-white" />
+                  <IoClose size={38} className="" />
                 ) : (
-                  <IoMenu size={38} className="text-white" />
+                  <IoMenu size={38} className="" />
                 )}
               </button>
             </div>
 
             {/* Logo */}
-            <Link href="/" className="flex items-center ">
-              <Image
-                src={Logo}
-                alt="Baby Crepe Logo"
-                width={50}
-                height={50}
-                className=""
-                priority
-              />
-            </Link>
-            <span className="text-[12px] font-bold font-poppins uppercase">
-              Baby Crepe
-            </span>
+            <div className="flex gap-2 items-center order-1 md:order-2">
+              <Link href="/" className="flex items-center ">
+                <Image
+                  src={Logo}
+                  alt="Baby Crepe Logo"
+                  width={50}
+                  height={50}
+                  className=""
+                  priority
+                />
+              </Link>
+              <span className="text-[12px] font-bold font-poppins uppercase">
+                Baby Crepe
+              </span>
+            </div>
           </div>
         </div>
 

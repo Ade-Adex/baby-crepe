@@ -121,13 +121,17 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
           withinPortal={false}
           zIndex={1000}
           overlayProps={{ opacity: 0.4, blur: 2 }}
-          styles={{
-            content: {
-              backgroundColor: '#F3ECE3',
-              width: '222px',
-              // height: 'calc(100vh - 70px)',
-            },
-          }}
+          size="xs" 
+  styles={{
+    content: {
+      backgroundColor: '#F3ECE3',
+      width: '75%', // 👈 take only 75% of screen (adjust as needed)
+      maxWidth: '280px', // optional: prevent it from getting too wide on tablets
+      borderTopRightRadius: '1rem',
+      borderBottomRightRadius: '1rem',
+      boxShadow: '4px 0 12px rgba(0,0,0,0.1)',
+    },
+  }}
           className="md:hidden absolute top-0 left-0 max-w-[222px] h-full z-50"
         >
           {sidebarContent}

@@ -36,7 +36,33 @@ const Navbar: React.FC<NavbarProps> = ({
       <div className="py-2 border-r border-gray-300 px-4 w-full md:w-58">
         <div className="flex justify-between items-center w-full md:gap-2 py-1 pl-3 ">
           {/* Menu toggle (mobile) */}
-          <div className="flex items-center md:hidden order-2 md:order-1">
+          <div className="flex items-center gap-3 md:hidden order-2 md:order-1">
+            <div className="flex items-center gap-4">
+              {isAuthenticated && (
+                <div className="relative">
+                  <FaRegUserCircle
+                    size={38}
+                    className="cursor-pointer text-button-bg"
+                    onClick={toggleDropdown}
+                  />
+                  {isDropdownOpen && (
+                    <div className="absolute right-0 top-[40px] mt-2 bg-black rounded-lg shadow-lg text-xs w-32 space-y-2.5">
+                      <p className="px-4 py-2 text-white">
+                        {user?.wallet
+                          ? `Wallet: ${user.wallet}`
+                          : 'No wallet connected'}
+                      </p>
+                      <button
+                        className="w-full px-4 py-2 text-white bg-red-600 rounded-b-lg cursor-pointer"
+                        onClick={handleDisconnect}
+                      >
+                        Disconnect
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
             <button className="cursor-pointer" onClick={toggle}>
               {opened ? <IoClose size={38} /> : <IoMenu size={38} />}
             </button>
@@ -61,9 +87,9 @@ const Navbar: React.FC<NavbarProps> = ({
       </div>
 
       {/* Right side */}
-      <div className="md:flex-1 flex justify-between px-4 md:p-6">
+      <div className="md:flex-1 hidden md:flex justify-between px-4 md:p-6">
         {/* Active menu name */}
-        <div className="hidden md:flex items-center gap-2 text-sm md:text-xl font-semibold capitalize text-button-bg">
+        <div className="flex items-center gap-2 text-sm md:text-xl font-semibold capitalize text-button-bg">
           {menu.find((item) => item.href === pathname)?.icon}
           <span>
             {menu.find((item) => item.href === pathname)?.name || 'Dashboard'}

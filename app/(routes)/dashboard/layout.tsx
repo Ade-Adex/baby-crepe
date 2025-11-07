@@ -124,8 +124,8 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
           styles={{
             content: {
               backgroundColor: '#F3ECE3',
-              width: '222px',
-              height: 'calc(100vh - 70px)',
+              width: '122px',
+              // height: 'calc(100vh - 70px)',
             },
           }}
           className="md:hidden absolute top-0 left-0 h-full z-50"

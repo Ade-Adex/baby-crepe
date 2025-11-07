@@ -129,7 +129,6 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
       maxWidth: '280px', // optional: prevent it from getting too wide on tablets
       borderTopRightRadius: '1rem',
       borderBottomRightRadius: '1rem',
-      boxShadow: '4px 0 12px rgba(0,0,0,0.1)',
     },
   }}
           className="md:hidden absolute top-0 left-0 max-w-[222px] h-full z-50"

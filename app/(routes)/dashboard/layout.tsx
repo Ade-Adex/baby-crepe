@@ -14,7 +14,6 @@ import { SlEarphones } from 'react-icons/sl'
 import { FaXTwitter } from 'react-icons/fa6'
 import '@mantine/core/styles.css'
 
-
 export default function DashboardLayout({ children }: { children: ReactNode }) {
   const pathname = usePathname()
   const [opened, { open, close, toggle }] = useDisclosure(false)
@@ -121,16 +120,16 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
           withinPortal={false}
           zIndex={1000}
           overlayProps={{ opacity: 0.4, blur: 2 }}
-          size="xs" 
-  styles={{
-    content: {
-      backgroundColor: '#F3ECE3',
-      width: '75%', // 👈 take only 75% of screen (adjust as needed)
-      maxWidth: '280px', // optional: prevent it from getting too wide on tablets
-      borderTopRightRadius: '1rem',
-      borderBottomRightRadius: '1rem',
-    },
-  }}
+          size="xs"
+          styles={{
+            content: {
+              backgroundColor: '#F3ECE3',
+              width: '75%', 
+              maxWidth: '280px', 
+              borderTopRightRadius: '1rem',
+              borderBottomRightRadius: '1rem',
+            },
+          }}
           className="md:hidden absolute top-0 left-0 max-w-[222px] h-full z-50"
         >
           {sidebarContent}

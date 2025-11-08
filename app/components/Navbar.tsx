@@ -34,7 +34,7 @@ const Navbar: React.FC<NavbarProps> = ({
     <header className="fixed top-0 left-0 z-40 w-full flex items-center justify-between bg-[#F3E4D4] md:bg-[#F3ECE3]">
       {/* Mobile menu + logo */}
       <div className="py-2 border-r border-gray-300 px-4 w-full md:w-58">
-        <div className="flex justify-between items-center w-full md:gap-2 py-1 md:pl-3 ">
+        <div className="flex justify-between items-center w-full md:gap-2 py-1 md:pl-3 md:bg-[#F3E4D4]">
           {/* Menu toggle (mobile) */}
           <div className="flex items-center gap-3 md:hidden order-2 md:order-1">
             <div className="flex items-center gap-4">
